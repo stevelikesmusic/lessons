@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <h1 id="title">Hello Everyone</h1>
+    <script>
+      let margin = 0
+      document.addEventListener('click', () => {
+        moveElement('title')
+      })
+
+      document.addEventListener('keydown', e => {
+        if (e.keyCode === 32) {
+          moveElement('title')
+        }
+      })
+
+      function moveElement(elementId) {
+        let $element = document.getElementById(elementId)
+        const currentMargin = parseInt($element.style.marginLeft, 10) || 0
+        $element.style.marginLeft = (currentMargin + 20) + 'px'
+      }
+    </script>
+  </body>
+  
+</html>
